@@ -1,0 +1,14 @@
+version: '2'
+services:
+    jhe2e-app:
+        image: jhe2e
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://jhe2e-mysql:3306/jhe2e?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    jhe2e-mysql:
+        extends:
+            file: mysql.yml
+            service: jhe2e-mysql
