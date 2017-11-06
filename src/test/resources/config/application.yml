@@ -13,6 +13,12 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+    client:
+        enabled: true
+    instance:
+        appname: JHE2E
+        instanceId: JHE2E:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
@@ -92,7 +98,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: 757ce44e434476e1ed0e084634c363662fb4f101
+                secret: 0def5e1d55ee792d720ee7ad090d544ffd73baae
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
